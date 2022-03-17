@@ -49,6 +49,35 @@ function tahnoutJmeno() {
     let vyherce = document.querySelector('#vyherka');
     vyherce.textContent = vyherniJmeno;
 
+
+//  jmena se radi od prvního, ale pak skáčou na konec seznamu
     let seznam = document.querySelector('#seznam');
+    seznam.textContent = tazenaJmena.reverse();
+
+    let pocitadlo = document.querySelector('#pocitadlo');
+    pocitadlo.textContent = tazenaJmena.length;
+
+    if (tazenaJmena.length % 2 == 0) {
+        seznam.textContent = tazenaJmena;
+    }
+
+/*  další pokusy, aby se jména řadila od prvního a pak postupně a ne odzadu
+
+    tazenaJmenaPozpatku = [];
+        for (let i = tazenaJmena.length - 1; i >= 0; i--) {        
+    tazenaJmenaPozpatku.push(tazenaJmena[i]);
+    console.log(tazenaJmenaPozpatku);
+    seznam.textContent = tazenaJmenaPozpatku;
+
+    for (let i = 0; i < Math.floor(tazenaJmena.length / 2); i++) {
+    [tazenaJmena[i], tazenaJmena[tazenaJmena.length - 1 - i]] = [tazenaJmena[tazenaJmena.length - 1 - i], tazenaJmena[i]];
+    }
     seznam.textContent = tazenaJmena;
+*/
+
+}
+
+
+function resetVyvolavace() {
+    document.location.reload(true);
 }
